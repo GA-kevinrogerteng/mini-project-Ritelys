@@ -18,7 +18,7 @@ class RitleysController < ApplicationController
 		@ritleys = Links.all
 		render :show_all
 	end
-	
+
 	def show
 		id = params[:id]
 		@ritley = Links.find(id)
@@ -48,10 +48,10 @@ class RitleysController < ApplicationController
 	def go
 		id = params[:random_id]
 		my_link = Links.find_by_random_string(id)
-		if my_link['url_link'].include? ("https://") or ("http://")
+		if my_link['url_link'].include? ("https://") || ("http://")
 			redirect_to my_link['url_link']
 		else
-		redirect_to my_link['url_link']
+			redirect_to "https://#{my_link['url_link']}"
 		end
 	end
 

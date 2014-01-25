@@ -9,7 +9,7 @@ RitleyApp::Application.routes.draw do
   get "ritleys/new" => 'ritleys#new', as: :new
   get "ritleys/:id" => 'ritleys#show', as: :show
   get "ritleys/go/:random_id" => 'ritleys#go'
-  get "ritleys/:id/edit" => 'ritleys#edit'
+  get "ritleys/:id/edit" => 'ritleys#edit', as: :edit
   patch "ritleys/:id" => 'ritleys#update'
 
   

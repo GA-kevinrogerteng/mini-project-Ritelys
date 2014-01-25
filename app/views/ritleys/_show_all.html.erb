@@ -13,7 +13,7 @@
 		<td> <%= ritley['url_link'] %></td>
 		<td>localhost:3000/ritleys/go/<%= ritley['random_string'] %></td>
 		<td> counter </td>
-		<td> edit </td>
+		<td> <%= link_to 'Edit', edit_path(ritley['id']) %> </td>
 	</tr> 
 	<% end %>
 	</table>
