@@ -1,0 +1,17 @@
+<div class="container">
+	<table class='center'>
+		<tr>
+			<th> Link Name</th>
+			<th> URL </th>
+			<th> Ritley URL </th>
+			<th> Counter </th>
+	<% @ritleys.each do |ritley| %>
+	<tr><td>Link Name:</td><td><%= ritley['name'] %></td></tr> <br>
+	<tr><td>URL:</td><td> <%= ritley['url_link'] %></td></tr> <br>
+	<tr><td>Ritley URL: </td><td>localhost:3000/ritleys/go/<%= ritley['random_string'] %></td></tr> <br>
+	<tr><td><% new_string = "localhost:3000/ritleys/go/#{ritley['random_string']}" %></td></tr> <br>
+	<% end %>
+	</table>
+</div>
+
+	

@@ -14,6 +14,11 @@ class RitleysController < ApplicationController
 		redirect_to "/ritleys/#{new_ritley.id}"
 	end
 
+	def show_all	
+		@ritleys = Links.all
+		render :show_all
+	end
+	
 	def show
 		id = params[:id]
 		@ritley = Links.find(id)
