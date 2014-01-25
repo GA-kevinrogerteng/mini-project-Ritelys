@@ -19,10 +19,15 @@ class RitleysController < ApplicationController
 		render :show
 	end
 
-	def go_to
-		# random_id = params[:random_id]
-		# my_link = Links.find(random_id)
-		# link_to_page = my_link.url_link
+	def go
+		id = params[:random_id]
+		my_link = Links.find_by_random_string(id)
+		my_link['url_link']
+		if my_link['url_link'].include? ("https://")
+		redirect_to my_link['url_link']
+		else
+		redirect_to "https://#{my_link['url_link']}"
+		end
 	end
 
 
