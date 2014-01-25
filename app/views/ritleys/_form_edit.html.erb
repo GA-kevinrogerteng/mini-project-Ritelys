@@ -1,1 +1,8 @@
-_form_edit.html.erb
+	<%= form_for :ritley, method: :patch, url: show_path do |f| %>
+		<%= label_tag(:name, "Name of Site") %> <%= f.text_field :name, value: @ritley['name']%><br>
+		<%= label_tag(:url_link, "URL of Link") %> <%= f.text_field :url_link, value: @ritley['url_link']%><br>
+		<%= label_tag(:random_string, "Unique URL")%><%= f.text_field :random_string, value: @ritley['random_string']%><br>
+		<%= f.submit 'Save Changes'%>
+	<%end%>
+
+	

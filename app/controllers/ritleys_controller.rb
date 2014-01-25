@@ -3,6 +3,7 @@ class RitleysController < ApplicationController
 	end
 
 	def new
+		@ritley = Links.new
 		@random = SecureRandom.urlsafe_base64(4)
 	end
 
@@ -19,14 +20,33 @@ class RitleysController < ApplicationController
 		render :show
 	end
 
+	def edit
+		id = params[:id]
+		@ritley = Links.find(id)
+	end
+
+	def update
+		id = params[:id]
+		ritley = Links.find(id)
+		updated_ritley = params.require(:ritley).permit(:name, :url_link, :random_string)
+		ritley.update(updated_ritley)
+		redirect_to show_path(ritley.id)
+	end
+
+	def golink
+		id = params[:id]
+		go_link = Links.find(id)
+		redirect_to "/ritleys/go/#{go_link['random_string']}"
+	end
+
+
 	def go
 		id = params[:random_id]
 		my_link = Links.find_by_random_string(id)
-		my_link['url_link']
-		if my_link['url_link'].include? ("https://")
-		redirect_to my_link['url_link']
+		if my_link['url_link'].include? ("https://") or ("http://")
+			redirect_to my_link['url_link']
 		else
-		redirect_to "https://#{my_link['url_link']}"
+		redirect_to my_link['url_link']
 		end
 	end
 

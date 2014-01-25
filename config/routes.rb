@@ -2,13 +2,14 @@ RitleyApp::Application.routes.draw do
 
 
   root to: "ritleys#index"
-
+  get "ritleys/golink/:id" => 'ritleys#golink', as: :golink
   get "ritleys" => "ritleys#index", as: :ritleys
   post "ritleys" => 'ritleys#create'
-  get "ritleys/new" => 'ritleys#new'
-  get "ritleys/:id" => 'ritleys#show'
-  get "ritleys/:id/edit" => 'ritleys#edit'
+  get "ritleys/new" => 'ritleys#new', as: :new
+  get "ritleys/:id" => 'ritleys#show', as: :show
   get "ritleys/go/:random_id" => 'ritleys#go'
+  get "ritleys/:id/edit" => 'ritleys#edit'
+  patch "ritleys/:id" => 'ritleys#update'
 
   
   
