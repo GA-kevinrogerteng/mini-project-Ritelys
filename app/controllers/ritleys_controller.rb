@@ -19,10 +19,10 @@ class RitleysController < ApplicationController
 		render :show_all
 	end
 
-	def show
+	def preview
 		id = params[:id]
 		@ritley = Links.find(id)
-		render :show
+		render :preview
 	end
 
 	def edit
@@ -48,6 +48,7 @@ class RitleysController < ApplicationController
 	def go
 		id = params[:random_id]
 		my_link = Links.find_by_random_string(id)
+		my_link.count
 		if my_link['url_link'].include? ("https://") || ("http://")
 			redirect_to my_link['url_link']
 		else

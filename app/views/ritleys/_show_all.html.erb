@@ -1,19 +1,17 @@
 <div class="container">
-	<table class='center'>
+	<table class='table'>
 		<tr>
 			<th> Link Name</th>
-			<th> URL </th>
-			<th> Ritley URL </th>
 			<th> Counter </th>
 			<th> Action </th>
+			<th> Preview </th>
 		</tr>
 	<% @ritleys.each do |ritley| %>
 	<tr>
 		<td><%= ritley['name'] %></td>
-		<td> <%= ritley['url_link'] %></td>
-		<td>localhost:3000/ritleys/go/<%= ritley['random_string'] %></td>
-		<td> counter </td>
-		<td> <%= link_to 'Edit', edit_path(ritley['id']) %> </td>
+		<td class="centered"> <%= ritley['counter'] %> </td>
+		<td class="centered"> <%= link_to 'Edit', edit_path(ritley['id']) %> </td>
+		<td class='centered'> <%= link_to 'Preview', preview_path(ritley['id']) %></td>
 	</tr> 
 	<% end %>
 	</table>

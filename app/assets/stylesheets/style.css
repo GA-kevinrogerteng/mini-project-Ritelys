@@ -9,10 +9,14 @@ tr {
 
 td {
 	border: 1px solid black;
-	text-align: left;
+	text-align: center;
 	padding: 2px;
 }
 
 th {
 	border: 1px solid black;
+	text-align: center;
+}
+.centered {
+	text-align: center;
 }

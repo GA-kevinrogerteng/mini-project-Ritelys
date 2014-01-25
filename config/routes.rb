@@ -7,7 +7,7 @@ RitleyApp::Application.routes.draw do
   get "ritleys" => "ritleys#index", as: :ritleys
   post "ritleys" => 'ritleys#create'
   get "ritleys/new" => 'ritleys#new', as: :new
-  get "ritleys/:id" => 'ritleys#show', as: :show
+  get "ritleys/:id" => 'ritleys#preview', as: :preview
   get "ritleys/go/:random_id" => 'ritleys#go'
   get "ritleys/:id/edit" => 'ritleys#edit', as: :edit
   patch "ritleys/:id" => 'ritleys#update'

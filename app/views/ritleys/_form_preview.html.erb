@@ -1,0 +1,12 @@
+<div class="container">
+	Link Name: <%= @ritley['name'] %> <br>
+	URL: <%= @ritley['url_link'] %> <br>
+	<h3>Here is your link!</h3> <br>
+	localhost:3000/ritleys/go/<%= @ritley['random_string'] %><br>
+	<% new_string = "localhost:3000/ritleys/go/#{@ritley['random_string']}" %>
+
+	<h3>Check your link below!</h3><br>
+	<%= link_to "#{new_string}", :golink %>
+</div>
+
+	
