@@ -2,3 +2,17 @@
 	position: center;
 	text-align: center;
 }
+
+tr {
+	border: 1px solid black;
+}
+
+td {
+	border: 1px solid black;
+	text-align: left;
+	padding: 2px;
+}
+
+th {
+	border: 1px solid black;
+}

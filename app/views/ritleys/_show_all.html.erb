@@ -5,11 +5,16 @@
 			<th> URL </th>
 			<th> Ritley URL </th>
 			<th> Counter </th>
+			<th> Action </th>
+		</tr>
 	<% @ritleys.each do |ritley| %>
-	<tr><td>Link Name:</td><td><%= ritley['name'] %></td></tr> <br>
-	<tr><td>URL:</td><td> <%= ritley['url_link'] %></td></tr> <br>
-	<tr><td>Ritley URL: </td><td>localhost:3000/ritleys/go/<%= ritley['random_string'] %></td></tr> <br>
-	<tr><td><% new_string = "localhost:3000/ritleys/go/#{ritley['random_string']}" %></td></tr> <br>
+	<tr>
+		<td><%= ritley['name'] %></td>
+		<td> <%= ritley['url_link'] %></td>
+		<td>localhost:3000/ritleys/go/<%= ritley['random_string'] %></td>
+		<td> counter </td>
+		<td> edit </td>
+	</tr> 
 	<% end %>
 	</table>
 </div>
