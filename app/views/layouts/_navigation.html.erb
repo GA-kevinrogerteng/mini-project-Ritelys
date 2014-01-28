@@ -9,6 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to 'Home', root_path, class: 'navbar-brand' %>
+      <!-- added a nav bar for signing in and out -->
       <% if signed_in? %>
               <%= link_to 'View All Ritleys', show_all_path, class: 'navbar-brand' %>
               <%= link_to "My profile", current_user, class: 'navbar-brand' %>
